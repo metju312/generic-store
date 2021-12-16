@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import StyleThemeProvider from "./modules/common/providers/StyleThemeProvider";
+import Layout from "./modules/layout/components/Layout/Layout";
+import AuthProvider from "./modules/auth/providers/AuthProvider";
+import styleThemeConfig from "./configs/style-theme.config";
+import {BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyleThemeProvider config={styleThemeConfig}>
+      <AuthProvider>
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
+      </AuthProvider>
+    </StyleThemeProvider>
   );
 }
 
