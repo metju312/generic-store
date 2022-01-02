@@ -3,7 +3,8 @@ import {createContext} from "react";
 export interface StyleThemeContextType {
   topBar?: {
     background?: string
-    padding?: string
+    height?: number
+    sidePaddings?: number
     text?: Text
   },
   content?: {
