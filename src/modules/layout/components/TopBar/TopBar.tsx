@@ -1,24 +1,24 @@
 import React, {useCallback} from 'react';
-import styled from 'styled-components';
+import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
 import {Link, useNavigate} from "react-router-dom";
 import { ReactComponent as LogoIcon } from '../../../../icons/logo.svg';
-import {StyleThemeContextType} from "../../../common/context/StyleThemeContext";
 import { ReactComponent as CartIcon } from '../../../../modules/store/icons/cart.svg';
 
-// https://styled-components.com/docs/api#typescript - otypowanie styled-componentów
-const TopBarContent = styled.div<StyleThemeContextType>`
-  background: ${props => props.theme.topBar.background};
-  height: ${props => props.theme.topBar.height}px;
-  padding-left: ${props => props.theme.topBar.sidePaddings}px;
-  padding-right: ${props => props.theme.topBar.sidePaddings}px;
+const TopBarContent = styled.div`
+  background: ${props => props.theme.topBar?.background};
+  height: ${props => props.theme.topBar?.height}px;
+  padding-left: ${props => props.theme.topBar?.sidePaddings}px;
+  padding-right: ${props => props.theme.topBar?.sidePaddings}px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${props => props.theme.card.borderColor};
-  ${props => props.theme.topBar.text}
+  border-bottom: 1px solid ${props => props.theme.card?.borderColor};
+  color: ${props => props.theme.topBar?.text?.color};
+  font-family: ${props => props.theme.topBar?.text?.fontFamily};
+  font-size: ${props => props.theme.topBar?.text?.fontSize};
 `;
 
 const TopBarGroup = styled.div`
@@ -37,7 +37,7 @@ const CartIconWrapper = styled.div`
 `;
 
 function TopBar() {
-  const theme: StyleThemeContextType = useStyleTheme();
+  const theme: DefaultTheme = useStyleTheme();
   const navigate = useNavigate();
 
   const handleOnLogoIconClick = useCallback(() => navigate('/'), []);

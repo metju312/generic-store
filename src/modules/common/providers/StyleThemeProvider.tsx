@@ -1,8 +1,9 @@
 import React, {ReactElement} from 'react';
-import StyleThemeContext, {StyleThemeContextType} from "../context/StyleThemeContext";
+import StyleThemeContext from "../context/StyleThemeContext";
+import {DefaultTheme} from "styled-components";
 
 interface StyleThemeProvider {
-  config: StyleThemeContextType
+  config: DefaultTheme
   children: ReactElement
 }
 

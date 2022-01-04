@@ -1,13 +1,13 @@
-import {StyleThemeContextType} from "../modules/common/context/StyleThemeContext";
+import {DefaultTheme} from "styled-components";
 
-const styleThemeConfig: StyleThemeContextType = {
+const styleThemeConfig: DefaultTheme = {
   topBar: {
     background: '#ffffff',
     height: 100,
     sidePaddings: 64,
     text: {
       color: '#2d333a',
-      "font-family": 'Mulish'
+      fontFamily: 'Mulish'
     }
   },
   content: {

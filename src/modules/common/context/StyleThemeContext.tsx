@@ -1,34 +1,6 @@
 import {createContext} from "react";
+import { DefaultTheme } from 'styled-components';
 
-export interface StyleThemeContextType {
-  topBar?: {
-    background?: string
-    height?: number
-    sidePaddings?: number
-    text?: Text
-  },
-  content?: {
-    background?: string
-    padding?: string
-    text?: Text
-    heading?: Text
-  },
-  footer?: {
-    background?: string
-    padding?: string,
-    text?: Text
-  },
-  card?: {
-    borderColor?: string
-  }
-}
-
-interface Text {
-  color?: string
-  'font-family'?: string
-  'font-size'?: string
-}
-
-const StyleThemeContext = createContext<StyleThemeContextType>({} as StyleThemeContextType);
+const StyleThemeContext = createContext<DefaultTheme>({} as DefaultTheme);
 
 export default StyleThemeContext;
