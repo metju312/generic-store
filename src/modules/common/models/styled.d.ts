@@ -16,7 +16,7 @@ declare module 'styled-components' {
     },
     footer?: {
       background?: string
-      padding?: string,
+      height?: number
       text?: Text
     },
     card?: {

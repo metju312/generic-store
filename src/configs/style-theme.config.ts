@@ -15,8 +15,11 @@ const styleThemeConfig: DefaultTheme = {
     padding: '32px 64px'
   },
   footer: {
-    background: '#ffffff',
-    padding: '32px 64px'
+    background: '#1b1f23',
+    height: 100,
+    text: {
+      color: '#ffffff',
+    }
   },
   card: {
     borderColor: '#ebebeb'
