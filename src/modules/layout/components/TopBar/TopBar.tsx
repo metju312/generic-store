@@ -29,6 +29,7 @@ const TopBarGroupLeft = styled.div`
     margin-right: 20px;
   }
 `;
+
 const TopBarGroupRight = styled.div`
   display: flex;
   flex-direction: row;
