@@ -3,7 +3,7 @@ import {DefaultTheme} from "styled-components";
 const styleThemeConfig: DefaultTheme = {
   topBar: {
     background: '#ffffff',
-    height: 100,
+    height: 116,
     sidePaddings: 64,
     text: {
       color: '#2d333a',

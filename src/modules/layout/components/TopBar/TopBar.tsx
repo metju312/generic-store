@@ -24,6 +24,9 @@ const TopBarContent = styled.div`
 const TopBarGroup = styled.div`
   display: flex;
   flex-direction: row;
+  & > * {
+    margin-right: 20px;
+  }
 `;
 
 const LogoIconWrapper = styled.div`
@@ -36,29 +39,39 @@ const CartIconWrapper = styled.div`
   cursor: pointer;
 `;
 
+const MenuLink = styled.div`
+  cursor: pointer;
+  color: #2d333a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  
+`;
+
 function TopBar() {
   const theme: DefaultTheme = useStyleTheme();
   const navigate = useNavigate();
 
-  const handleOnLogoIconClick = useCallback(() => navigate('/'), []);
-  const handleOnCartIconClick = useCallback(() => navigate('/cart'), []);
+  const navigateTo = (path) => {
+    navigate(path)
+  };
 
   return (
     <TopBarContent theme={theme}>
       <TopBarGroup>
-        <Link to="/store">Sklep</Link>
-        <Link to="/about">O mnie</Link>
-        <Link to="/contact">Kontakt</Link>
-        <Link to="/users">Użytkownicy</Link>
+        <MenuLink onClick={() => navigateTo('/store')}>Sklep</MenuLink>
+        <MenuLink onClick={() => navigateTo('/about')}>O mnie</MenuLink>
+        <MenuLink onClick={() => navigateTo('/contact')}>Kontakt</MenuLink>
+        <MenuLink onClick={() => navigateTo('/users')}>Użytkownicy</MenuLink>
       </TopBarGroup>
       <LogoIconWrapper>
-        <LogoIcon onClick={handleOnLogoIconClick} />
+        <LogoIcon onClick={() => navigateTo('/')} />
       </LogoIconWrapper>
       <TopBarGroup>
-        <Link to="/login">Logowanie</Link>
-        <Link to="/register">Rejestracja</Link>
+        <MenuLink onClick={() => navigateTo('/login')}>Logowanie</MenuLink>
+        <MenuLink onClick={() => navigateTo('/register')}>Rejestracja</MenuLink>
         <CartIconWrapper>
-          <CartIcon onClick={handleOnCartIconClick} title="Koszyk" />
+          <CartIcon onClick={() => navigateTo('/cart')} title="Koszyk" />
         </CartIconWrapper>
       </TopBarGroup>
     </TopBarContent>

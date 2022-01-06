@@ -4,7 +4,7 @@ import useStyleTheme from "../../common/hooks/useStyleTheme";
 
 const HomePageContent = styled.div`
   background: #39625d;
-  height: calc(100% - ${props => props.theme.topBar?.height})px;
+  height: calc(100% - ${props => props.theme.topBar?.height}px);
 `;
 
 const HomePage = () => {
