@@ -7,16 +7,27 @@ const styleThemeConfig: DefaultTheme = {
     sidePaddings: 64,
     text: {
       color: '#2d333a',
-      fontFamily: 'Mulish'
+      fontFamily: 'Mulish',
+      fontSize: 12
     }
   },
   content: {
     background: '#ffffff',
-    padding: '32px 64px'
+    sidePaddings: 64,
+    text: {
+      color: '#2d333a',
+      fontFamily: 'Mulish'
+    },
+    palette: {
+      primary: '#00AA9A',
+      dark: '#39625d',
+      light: '#E3FFFB'
+    }
   },
   footer: {
     background: '#1b1f23',
     height: 100,
+    sidePaddings: 64,
     text: {
       color: '#ffffff',
     }

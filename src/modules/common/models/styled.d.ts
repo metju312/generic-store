@@ -10,12 +10,14 @@ declare module 'styled-components' {
     },
     content?: {
       background?: string
-      padding?: string
+      sidePaddings?: number
       text?: Text
       heading?: Text
+      palette?: ColorPalette
     },
     footer?: {
       background?: string
+      sidePaddings?: number
       height?: number
       text?: Text
     },
@@ -29,5 +31,12 @@ declare module 'styled-components' {
 interface Text {
   color?: string
   fontFamily?: string
-  fontSize?: string
+  fontSize?: number
+  fontWeight?: number
+}
+
+interface ColorPalette {
+  light?: string
+  primary?: string
+  dark?: string
 }

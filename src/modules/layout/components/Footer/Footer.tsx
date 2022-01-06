@@ -7,6 +7,8 @@ const FooterContent = styled.div`
   background: ${props => props.theme.footer?.background};
   height: ${props => props.theme.footer?.height}px;
   color: ${props => props.theme.footer?.text?.color};
+  padding-left: ${props => props.theme.footer?.sidePaddings}px;
+  padding-right: ${props => props.theme.footer?.sidePaddings}px;
 `;
 
 function Footer() {

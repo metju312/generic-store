@@ -1,7 +1,7 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { ReactComponent as LogoIcon } from '../../../../icons/logo.svg';
 import { ReactComponent as CartIcon } from '../../../../modules/store/icons/cart.svg';
 
@@ -18,24 +18,32 @@ const TopBarContent = styled.div`
   border-bottom: 1px solid ${props => props.theme.card?.borderColor};
   color: ${props => props.theme.topBar?.text?.color};
   font-family: ${props => props.theme.topBar?.text?.fontFamily};
-  font-size: ${props => props.theme.topBar?.text?.fontSize};
+  font-size: ${props => props.theme.topBar?.text?.fontSize}px;
 `;
 
-const TopBarGroup = styled.div`
+const TopBarGroupLeft = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   & > * {
     margin-right: 20px;
   }
 `;
+const TopBarGroupRight = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > * {
+    margin-left: 20px;
+  }
+`;
 
 const LogoIconWrapper = styled.div`
-  width: 100px;
+  width: 110px;
   cursor: pointer;
 `;
 
 const CartIconWrapper = styled.div`
-  width: 100px;
   cursor: pointer;
 `;
 
@@ -44,8 +52,6 @@ const MenuLink = styled.div`
   color: #2d333a;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 12px;
-  
 `;
 
 function TopBar() {
@@ -58,22 +64,22 @@ function TopBar() {
 
   return (
     <TopBarContent theme={theme}>
-      <TopBarGroup>
+      <TopBarGroupLeft>
         <MenuLink onClick={() => navigateTo('/store')}>Sklep</MenuLink>
         <MenuLink onClick={() => navigateTo('/about')}>O mnie</MenuLink>
         <MenuLink onClick={() => navigateTo('/contact')}>Kontakt</MenuLink>
         <MenuLink onClick={() => navigateTo('/users')}>Użytkownicy</MenuLink>
-      </TopBarGroup>
+      </TopBarGroupLeft>
       <LogoIconWrapper>
         <LogoIcon onClick={() => navigateTo('/')} />
       </LogoIconWrapper>
-      <TopBarGroup>
+      <TopBarGroupRight>
         <MenuLink onClick={() => navigateTo('/login')}>Logowanie</MenuLink>
         <MenuLink onClick={() => navigateTo('/register')}>Rejestracja</MenuLink>
         <CartIconWrapper>
           <CartIcon onClick={() => navigateTo('/cart')} title="Koszyk" />
         </CartIconWrapper>
-      </TopBarGroup>
+      </TopBarGroupRight>
     </TopBarContent>
   );
 }
