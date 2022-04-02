@@ -1,6 +1,25 @@
 import React from 'react';
 import styled from "styled-components";
 import useStyleTheme from "../../common/hooks/useStyleTheme";
+import { useTranslation } from 'react-i18next';
+
+const HomePage = () => {
+  const { t } = useTranslation();
+  const theme = useStyleTheme();
+
+  return (
+    <HomePageContent theme={theme}>
+      <DescriptionPanel theme={theme}>
+        <p>{t('name')}</p>
+      </DescriptionPanel>
+      <ProductPanel theme={theme}>
+        product
+        product
+        product
+      </ProductPanel>
+    </HomePageContent>
+  );
+};
 
 const HomePageContent = styled.div`
   height: calc(100% - ${props => props.theme.topBar?.height}px);
@@ -27,24 +46,5 @@ const ProductPanel = styled.div`
   background-size: 100%;
   background-repeat: no-repeat;
 `;
-
-const HomePage = () => {
-  const theme = useStyleTheme();
-
-  return (
-    <HomePageContent theme={theme}>
-      <DescriptionPanel theme={theme}>
-        description
-        description
-        description
-      </DescriptionPanel>
-      <ProductPanel theme={theme}>
-        product
-        product
-        product
-      </ProductPanel>
-    </HomePageContent>
-  );
-};
 
 export default HomePage;
