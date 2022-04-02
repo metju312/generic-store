@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 * {
@@ -10,6 +12,15 @@ body {
   background-color: #fafafa;
   margin: 0;
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 @media only screen and (min-width: 768px) {
