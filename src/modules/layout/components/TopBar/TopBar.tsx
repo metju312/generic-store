@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
 import {useNavigate} from "react-router-dom";
-import { ReactComponent as CartIcon } from '../../../../modules/store/icons/cart.svg';
+import { ReactComponent as CartIcon } from '../../../products/icons/cart.svg';
 
 const TopBarContent = styled.div`
   background: ${props => props.theme.topBar?.background};

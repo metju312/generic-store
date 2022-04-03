@@ -7,16 +7,16 @@ import {BrowserRouter} from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
 import WebFont from 'webfontloader';
 
-const HomePage = React.lazy(() => import("./modules/store/pages/HomePage"));
+const HomePage = React.lazy(() => import("./modules/products/pages/HomePage"));
 
-const StorePage = React.lazy(() => import("./modules/store/pages/StorePage"));
+const ProductsPage = React.lazy(() => import("./modules/products/pages/ProductsPage"));
 const AboutPage = React.lazy(() => import("./modules/common/pages/AboutPage"));
 const ContactPage = React.lazy(() => import("./modules/common/pages/ContactPage"));
-const UsersList = React.lazy(() => import("./modules/user/pages/UsersList"));
+const UsersList = React.lazy(() => import("./modules/users/pages/UsersList"));
 
 const LoginPage = React.lazy(() => import("./modules/auth/pages/LoginPage"));
 const RegisterPage = React.lazy(() => import("./modules/auth/pages/RegisterPage"));
-const CartPage = React.lazy(() => import("./modules/store/pages/CartPage"));
+const CartPage = React.lazy(() => import("./modules/products/pages/CartPage"));
 
 function App() {
   useEffect(() => {
@@ -35,12 +35,12 @@ function App() {
             <Routes>
               <Route path="/" element={
                 <React.Suspense fallback={<>...</>}>
-                  <HomePage />
+                  <ProductsPage />
                 </React.Suspense>}
               />
-              <Route path="store" element={
+              <Route path="products" element={
                 <React.Suspense fallback={<>...</>}>
-                  <StorePage />
+                  <ProductsPage />
                 </React.Suspense>}
               />
               <Route path="about" element={
