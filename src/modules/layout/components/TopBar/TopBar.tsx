@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
 import {useNavigate} from "react-router-dom";
-import { ReactComponent as LogoIcon } from '../../../../icons/logo.svg';
 import { ReactComponent as CartIcon } from '../../../../modules/store/icons/cart.svg';
 
 const TopBarContent = styled.div`
@@ -15,7 +14,6 @@ const TopBarContent = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${props => props.theme.card?.borderColor};
   color: ${props => props.theme.topBar?.text?.color};
   font-family: ${props => props.theme.topBar?.text?.fontFamily};
   font-size: ${props => props.theme.topBar?.text?.fontSize}px;
@@ -39,9 +37,14 @@ const TopBarGroupRight = styled.div`
   }
 `;
 
-const LogoIconWrapper = styled.div`
-  width: 110px;
-  cursor: pointer;
+const TopBarGroupCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > * {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 `;
 
 const CartIconWrapper = styled.div`
@@ -66,14 +69,14 @@ function TopBar() {
   return (
     <TopBarContent theme={theme}>
       <TopBarGroupLeft>
+        <MenuLink onClick={() => navigateTo('/')}>Hazelgrouse</MenuLink>
+      </TopBarGroupLeft>
+      <TopBarGroupCenter>
         <MenuLink onClick={() => navigateTo('/store')}>Sklep</MenuLink>
         <MenuLink onClick={() => navigateTo('/about')}>O mnie</MenuLink>
         <MenuLink onClick={() => navigateTo('/contact')}>Kontakt</MenuLink>
         <MenuLink onClick={() => navigateTo('/users')}>Użytkownicy</MenuLink>
-      </TopBarGroupLeft>
-      <LogoIconWrapper>
-        <LogoIcon onClick={() => navigateTo('/')} />
-      </LogoIconWrapper>
+      </TopBarGroupCenter>
       <TopBarGroupRight>
         <MenuLink onClick={() => navigateTo('/login')}>Logowanie</MenuLink>
         <MenuLink onClick={() => navigateTo('/register')}>Rejestracja</MenuLink>

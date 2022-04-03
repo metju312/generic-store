@@ -8,6 +8,12 @@ declare module 'styled-components' {
       sidePaddings?: number
       text?: Text
     },
+    breadcrumbsBar?: {
+      background?: string
+      sidePaddings?: number
+      height?: number
+      text?: Text
+    },
     content?: {
       background?: string
       sidePaddings?: number
