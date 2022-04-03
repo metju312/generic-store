@@ -1,11 +1,15 @@
 import * as React from 'react';
-import FiltersSidebar from "../components/FiltersSidebar/FiltersSidebar";
+import FiltersSidebar from "../components/Filters/FiltersSidebar";
+import ProductsList from "../components/Products/ProductsList";
 
 function ProductsPage() {
+  const products = [{name: "cos"}, {name: "cos2"}];
+
   return (
-    <div>
+    <>
       <FiltersSidebar />
-    </div>
+      <ProductsList products={products}/>
+    </>
   );
 }
 
