@@ -1,18 +1,20 @@
 import {db} from "../../../configs/firebase.config";
 import {collection, addDoc, Timestamp, query, orderBy, onSnapshot, doc, updateDoc} from 'firebase/firestore'
+import Product from "../models/product.model";
 
 
 const useProductsApi = () => {
+
   const fetchProducts = () => {
     return new Promise((resolve, reject) => {
       const q = query(collection(db, 'products'), orderBy('created', 'desc'))
       onSnapshot(q, (querySnapshot) => {
-        const products = querySnapshot.docs.map(doc => ({
+        const products: Product[] = querySnapshot.docs.map(doc => ({
           id: doc.id,
-          data: doc.data()
+          name: doc.data().name,
+          description: doc.data().description,
+          created: doc.data().created
         }))
-        console.log('querySnapshot::oneDoc', products)
-
         resolve(products);
       })
     });
@@ -20,8 +22,8 @@ const useProductsApi = () => {
 
   function createProduct(){
     return addDoc(collection(db, 'products'), {
-      name: 'title1',
-      description: 'description1',
+      name: 'title2',
+      description: 'description2',
       created: Timestamp.now()
     }).then(response => {
       console.log('createProduct::response', response);
