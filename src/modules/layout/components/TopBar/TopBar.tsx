@@ -3,9 +3,13 @@ import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
 import {useNavigate} from "react-router-dom";
 import { ReactComponent as CartIcon } from '../../../products/icons/cart.svg';
+import Typography from "../../../common/typography/Typography";
 
 const TopBarContent = styled.div`
-  background: ${props => props.theme.topBar?.background};
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: ${props => props.theme.topBar?.height}px;
   padding-left: ${props => props.theme.topBar?.sidePaddings}px;
   padding-right: ${props => props.theme.topBar?.sidePaddings}px;
@@ -72,6 +76,9 @@ function TopBar() {
         <MenuLink onClick={() => navigateTo('/')}>Hazelgrouse</MenuLink>
       </TopBarGroupLeft>
       <TopBarGroupCenter>
+        <Typography variant="displayXsBold">
+          Moja typografia
+        </Typography>
         <MenuLink onClick={() => navigateTo('/store')}>Sklep</MenuLink>
         <MenuLink onClick={() => navigateTo('/about')}>O mnie</MenuLink>
         <MenuLink onClick={() => navigateTo('/contact')}>Kontakt</MenuLink>

@@ -9,24 +9,18 @@ const HomePage = () => {
 
   return (
     <HomePageContent theme={theme}>
-      <DescriptionPanel theme={theme}>
-        <p>{t('name')}</p>
-      </DescriptionPanel>
-      <ProductPanel theme={theme}>
-        product
-        product
-        product
-      </ProductPanel>
+      <ProductPanel />
     </HomePageContent>
   );
 };
 
 const HomePageContent = styled.div`
-  height: calc(100% - ${props => props.theme.topBar?.height}px);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(138.52deg, #FFA000 13.57%, #A82F30 72.75%);
 `;
 
 const DescriptionPanel = styled.div`
@@ -38,13 +32,9 @@ const DescriptionPanel = styled.div`
 `;
 
 const ProductPanel = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-right: ${props => props.theme.content?.sidePaddings}px;
-  flex-grow: 1;
-  background-image: url('/assets/images/product.webp');
-  background-size: 100%;
+  background-image: url('/assets/images/picture1.jpeg');
   background-repeat: no-repeat;
+  max-height: 100px;
 `;
 
 export default HomePage;

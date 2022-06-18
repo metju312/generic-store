@@ -29,7 +29,63 @@ declare module 'styled-components' {
     },
     card?: {
       borderColor?: string
-    }
+    },
+    textStyles?: {
+      display2xlNormal?: Text
+      display2xlMedium?: Text
+      display2xlSemiBold?: Text
+      display2xlBold?: Text
+
+      displayXlNormal?: Text
+      displayXlMedium?: Text
+      displayXlSemiBold?: Text
+      displayXlBold?: Text
+
+      displayLgNormal?: Text
+      displayLgMedium?: Text
+      displayLgSemiBold?: Text
+      displayLgBold?: Text
+
+      displayMdNormal?: Text
+      displayMdMedium?: Text
+      displayMdSemiBold?: Text
+      displayMdBold?: Text
+
+      displaySmNormal?: Text
+      displaySmMedium?: Text
+      displaySmSemiBold?: Text
+      displaySmBold?: Text
+
+      displayXsNormal?: Text
+      displayXsMedium?: Text
+      displayXsSemiBold?: Text
+      displayXsBold?: Text2
+
+      textXlNormal?: Text
+      textXlMedium?: Text
+      textXlSemiBold?: Text
+      textXlBold?: Text
+
+      textLgNormal?: Text
+      textLgMedium?: Text
+      textLgSemiBold?: Text
+      textLgBold?: Text
+
+      textMdNormal?: Text
+      textMdMedium?: Text
+      textMdSemiBold?: Text
+      textMdBold?: Text
+
+      textSmNormal?: Text
+      textSmMedium?: Text
+      textSmSemiBold?: Text
+      textSmBold?: Text
+
+      textXsNormal?: Text
+      textXsMedium?: Text
+      textXsSemiBold?: Text
+      textXsBold?: Text
+    },
   }
 }
 
@@ -37,7 +93,7 @@ declare module 'styled-components' {
 interface Text {
   color?: string
   fontFamily?: string
-  fontSize?: number
+  fontSize?: string
   fontWeight?: number
 }
 
