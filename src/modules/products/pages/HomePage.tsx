@@ -32,9 +32,18 @@ const DescriptionPanel = styled.div`
 `;
 
 const ProductPanel = styled.div`
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin: auto;
   background-image: url('/assets/images/picture1.jpeg');
   background-repeat: no-repeat;
-  max-height: 100px;
+  min-height: 400px;
+  min-width: 400px;
+  max-height: 400px;
+  max-width: 400px;
 `;
 
 export default HomePage;

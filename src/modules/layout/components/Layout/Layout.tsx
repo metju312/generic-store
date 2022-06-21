@@ -17,7 +17,7 @@ const Layout = (props) => {
   return (
     <StyledLayout theme={theme}>
       <TopBar />
-      {props.children}
+        {props.children}
       <Footer />
     </StyledLayout>
   );
