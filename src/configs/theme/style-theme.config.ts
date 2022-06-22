@@ -16,7 +16,8 @@ const styleThemeConfig: DefaultTheme = {
   },
   content: {
     background: '#ffffff',
-    sidePaddings: 120,
+    maxWidth: 1500,
+    sidePaddings: 64,
     text: {
       color: '#2d333a',
       fontFamily: 'Mulish'

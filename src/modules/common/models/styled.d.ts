@@ -17,6 +17,7 @@ declare module 'styled-components' {
     },
     content?: {
       background?: string
+      maxWidth?: number
       sidePaddings?: number
       text?: Text
       heading?: Text

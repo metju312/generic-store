@@ -1,22 +1,18 @@
 import React from 'react';
 import styled, {DefaultTheme} from 'styled-components';
 import useStyleTheme from "../../../common/hooks/useStyleTheme";
-import {useNavigate} from "react-router-dom";
 import cartIcon from '../../../products/icons/cart.svg';
 import favoriteIcon from '../../../products/icons/favorite.svg';
-import logoSvg from '../../../../configs/logo/logo.svg';
+import logoSvg from '../../../../icons/logo/logo.svg';
 import Typography from "../../../common/typography/Typography";
 import {StyledSvg} from "../../../common/icons/StyledSvg";
+import useNavigation from "../../../common/utils/routing/useNavigation";
 
 function TopBar() {
   const theme: DefaultTheme = useStyleTheme();
-  const navigate = useNavigate();
+  const { navigateTo } = useNavigation();
 
   const textColor = theme.topBar?.text?.color as string;
-
-  const navigateTo = (path) => {
-    navigate(path)
-  };
 
   const drawMenuLink = (label: string, path: string) => {
     return (
@@ -29,7 +25,7 @@ function TopBar() {
   }
 
   return (
-    <StyledTopBar theme={theme}>
+    <TopBarContainerWrapper theme={theme}>
       <TopBarContainer theme={theme}>
         <TopBarGroupLeft>
           <StyledSvg width={208.73} height={32} color={textColor} src={logoSvg} onClick={() => navigateTo('/')} title="Strona główna"/>
@@ -46,11 +42,11 @@ function TopBar() {
           </CartIconWrapper>
         </TopBarGroupRight>
       </TopBarContainer>
-    </StyledTopBar>
+    </TopBarContainerWrapper>
   );
 }
 
-const StyledTopBar = styled.div`
+const TopBarContainerWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;

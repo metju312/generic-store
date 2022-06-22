@@ -2,16 +2,31 @@ import React from 'react';
 import styled from "styled-components";
 import useStyleTheme from "../../common/hooks/useStyleTheme";
 import { useTranslation } from 'react-i18next';
+import twitterIcon from "../../common/icons/twitter.svg";
+import instagramIcon from "../../common/icons/instagram.svg";
+import facebookIcon from "../../common/icons/facebook.svg";
+import {StyledSvg} from "../../common/icons/StyledSvg";
+import useNavigation from "../../common/utils/routing/useNavigation";
 
 const HomePage = () => {
-  const { t } = useTranslation();
   const theme = useStyleTheme();
+  const { t } = useTranslation();
+  const { navigateTo } = useNavigation();
+
+  const textColor = theme.topBar?.text?.color as string;
 
   return (
     <HomePageContent theme={theme}>
       <ProductPanelContainer>
         <ProductPanel />
       </ProductPanelContainer>
+      <SocialIconsContainerWrapper>
+        <SocialIconsContainer theme={theme}>
+          <StyledSvg width={20} height={20} color={textColor} src={twitterIcon} onClick={() => navigateTo('/twitter')} title="Twitter"/>
+          <StyledSvg width={20} height={20} color={textColor} src={instagramIcon} onClick={() => navigateTo('/instagram')} title="Instagram"/>
+          <StyledSvg width={20} height={20} color={textColor} src={facebookIcon} onClick={() => navigateTo('/facebook')} title="Facebook"/>
+        </SocialIconsContainer>
+      </SocialIconsContainerWrapper>
     </HomePageContent>
   );
 };
@@ -23,14 +38,6 @@ const HomePageContent = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(138.52deg, #FFA000 13.57%, #A82F30 72.75%);
-`;
-
-const DescriptionPanel = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: ${props => props.theme.content?.sidePaddings}px;
-  background: ${props => props.theme.content?.palette?.dark};
-  flex-grow: 1;
 `;
 
 const ProductPanelContainer = styled.div`
@@ -58,6 +65,29 @@ const ProductPanel = styled.div`
           drop-shadow(23px 17px 17px rgba(0, 0, 0, 0.28))
           drop-shadow(10px 8px 13px rgba(0, 0, 0, 0.47))
           drop-shadow(3px 2px 7px rgba(0, 0, 0, 0.54));
+`;
+
+const SocialIconsContainerWrapper = styled.div`
+  position: absolute;
+  top:calc(50vh - 54px);;
+  left:0;
+  right:0;
+  bottom:0;
+`;
+
+const SocialIconsContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${props => props.theme.content?.maxWidth}px;
+  padding-left: ${props => props.theme.content?.sidePaddings}px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  
+  & > * {
+    margin-bottom: 16px;
+  }
 `;
 
 export default HomePage;
