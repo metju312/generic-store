@@ -9,7 +9,9 @@ const HomePage = () => {
 
   return (
     <HomePageContent theme={theme}>
-      <ProductPanel />
+      <ProductPanelContainer>
+        <ProductPanel />
+      </ProductPanelContainer>
     </HomePageContent>
   );
 };
@@ -31,19 +33,31 @@ const DescriptionPanel = styled.div`
   flex-grow: 1;
 `;
 
-const ProductPanel = styled.div`
+const ProductPanelContainer = styled.div`
   position: absolute;
   top:0;
   left:0;
   right:0;
   bottom:0;
   margin: auto;
+  width: 600px;
+  height: 451.35px;
+`;
+
+const ProductPanel = styled.div`
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
   background-image: url('/assets/images/picture1.jpeg');
   background-repeat: no-repeat;
-  min-height: 400px;
-  min-width: 400px;
-  max-height: 400px;
-  max-width: 400px;
+  background-size: cover;
+  background-position: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+          drop-shadow(63px 48px 22px rgba(0, 0, 0, 0.01))
+          drop-shadow(40px 30px 20px rgba(0, 0, 0, 0.08))
+          drop-shadow(23px 17px 17px rgba(0, 0, 0, 0.28))
+          drop-shadow(10px 8px 13px rgba(0, 0, 0, 0.47))
+          drop-shadow(3px 2px 7px rgba(0, 0, 0, 0.54));
 `;
 
 export default HomePage;

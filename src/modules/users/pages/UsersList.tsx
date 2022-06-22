@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {db} from "../../../configs/firebase.config";
+import {db} from "../../../configs/firebase/firebase.config";
 import {collection, getDocs} from 'firebase/firestore';
 
 const UsersList = () => {

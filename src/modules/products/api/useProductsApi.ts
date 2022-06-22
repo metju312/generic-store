@@ -1,4 +1,4 @@
-import {db} from "../../../configs/firebase.config";
+import {db} from "../../../configs/firebase/firebase.config";
 import {collection, addDoc, Timestamp, query, orderBy, onSnapshot, doc, updateDoc} from 'firebase/firestore'
 import Product from "../models/product.model";
 

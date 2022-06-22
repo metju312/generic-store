@@ -1,5 +1,5 @@
 import React from 'react';
-import styleThemeConfig from "./configs/style-theme.config";
+import styleThemeConfig from "./configs/theme/style-theme.config";
 import {BrowserRouter} from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
 
