@@ -4,6 +4,7 @@ import useStyleTheme from "../../../common/hooks/useStyleTheme";
 import cartIcon from '../../../products/icons/cart.svg';
 import favoriteIcon from '../../../products/icons/favorite.svg';
 import logoSvg from '../../../../icons/logo/logo.svg';
+import logoTitleSvg from '../../../../icons/logo/logo-title.svg';
 import Typography from "../../../common/typography/Typography";
 import {StyledSvg} from "../../../common/icons/StyledSvg";
 import useNavigation from "../../../common/utils/routing/useNavigation";
@@ -27,8 +28,9 @@ function TopBar() {
   return (
     <TopBarContainerWrapper theme={theme}>
       <TopBarContainer theme={theme}>
-        <TopBarGroupLeft>
-          <StyledSvg width={208.73} height={32} color={textColor} src={logoSvg} onClick={() => navigateTo('/')} title="Strona główna"/>
+        <TopBarGroupLeft onClick={() => navigateTo('/')} title="Strona główna">
+          <StyledSvg width={19} height={28.89} color={textColor} src={logoSvg}/>
+          <StyledSvg width={217} height={37} color={textColor} src={logoTitleSvg}/>
         </TopBarGroupLeft>
         <TopBarGroupCenter>
           {drawMenuLink('Galeria', '/store')}
@@ -77,8 +79,9 @@ const TopBarGroupLeft = styled.div`
   align-items: center;
   flex-grow: 1;
   flex-basis: 0;
+  cursor: pointer;
   & > * {
-    margin-right: 20px;
+    margin-right: 8px;
   }
 `;
 

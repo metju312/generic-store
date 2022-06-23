@@ -18,6 +18,7 @@ function Typography({variant, children, color}: IProps) {
 const StyledTypography = styled.div<{variant: string}>`
   font-family: ${props => props.theme.textStyles?.[props.variant]?.fontFamily};
   font-size: ${props => props.theme.textStyles?.[props.variant]?.fontSize};
+  font-weight: ${props => props.theme.textStyles?.[props.variant]?.fontWeight};
   color: ${props => props.color};
 `;
 
