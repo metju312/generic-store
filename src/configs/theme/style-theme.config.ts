@@ -29,11 +29,12 @@ const styleThemeConfig: DefaultTheme = {
     }
   },
   footer: {
-    background: '#1b1f23',
+    background: '#ffffff',
     height: 100,
+    maxWidth: 1500,
     sidePaddings: 64,
     text: {
-      color: '#ffffff',
+      color: '#475467',
     }
   },
   card: {

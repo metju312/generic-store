@@ -25,6 +25,7 @@ declare module 'styled-components' {
     },
     footer?: {
       background?: string
+      maxWidth?: number
       sidePaddings?: number
       height?: number
       text?: Text
